@@ -9,5 +9,3 @@ class PersonNode (Node):
         self.birthDay = birthDay
         self.birthPlace = birthPlace
         self.jobPlace = jobPlace
-#hello
-
