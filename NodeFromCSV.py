@@ -17,11 +17,10 @@ for i in range(len(df_cars)):
 
 # Houses
 df_houses = pd.read_csv('data/homes.csv')
-df_houses = df_houses[[df_houses.columns[2], df_houses.columns[1], df_houses.columns[0], df_houses.columns[3], df_houses.columns[4]]]
 houseDictionary = {}
 for i in range(len(df_houses)):
-    house_tmp = HouseNode(df_houses.iloc[i][0], df_houses.iloc[i][2], df_houses.iloc[i][1], df_houses.iloc[i][3], df_houses.iloc[i][4])
-    houseDictionary[df_houses.iloc[i][0]] = house_tmp
+    house_tmp = HouseNode(df_houses.iloc[i][2], df_houses.iloc[i][1], df_houses.iloc[i][0], df_houses.iloc[i][3], df_houses.iloc[i][4])
+    houseDictionary[df_houses.iloc[i][2]] = house_tmp
 
 ########################################################################################################################
 
