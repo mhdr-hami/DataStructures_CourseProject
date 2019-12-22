@@ -2,7 +2,7 @@ from Edge import *
 
 
 class OwnershipEdge(Edge):
-    def __init__(self, FromNode, ToNode, SAID , BuyDate, Price):
+    def __init__(self, SAID, FromNode, ToNode, BuyDate, Price):
         self.FromNode = FromNode
         self.ToNode = ToNode
         self.UniqueKey = SAID
