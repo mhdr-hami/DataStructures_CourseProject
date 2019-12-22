@@ -25,11 +25,10 @@ for i in range(len(df_calls)):
 
 #Transactions
 df_transactions = pd.read_csv('data/transactions.csv')
-df_transactions = df_transactions[[df_transactions.columns[2], df_transactions.columns[0], df_transactions.columns[1], df_transactions.columns[3], df_transactions.columns[4]]]
 transactionsDictionary = {}
 for i in range(len(df_transactions)):
-    transaction_tmp = TransactionEdge(df_transactions.iloc[i][0], df_transactions.iloc[i][1], df_transactions.iloc[i][2], df_transactions.iloc[i][3], df_transactions.iloc[i][4])
-    transactionsDictionary[df_transactions.iloc[i][0]] = transaction_tmp
+    transaction_tmp = TransactionEdge(df_transactions.iloc[i][2], df_transactions.iloc[i][0], df_transactions.iloc[i][1], df_transactions.iloc[i][3], df_transactions.iloc[i][4])
+    transactionsDictionary[df_transactions.iloc[i][2]] = transaction_tmp
 
 ########################################################################################################################
 
