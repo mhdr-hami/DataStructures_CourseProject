@@ -8,7 +8,6 @@ from BankAccount import *
 
 # CARS
 df_cars = pd.read_csv('data/cars.csv')
-df_cars = df_cars[[df_cars.columns[0], df_cars.columns[1], df_cars.columns[2], df_cars.columns[3]]]
 carsDictionary = {}
 for i in range(len(df_cars)):
     car_tmp = CarNode(df_cars.iloc[i][0], df_cars.iloc[i][1], df_cars.iloc[i][2], df_cars.iloc[i][3])
