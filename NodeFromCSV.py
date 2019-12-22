@@ -44,11 +44,10 @@ for i in range(len(df_persons)):
 
 # PhoneNumbers
 df_phoneNumbers = pd.read_csv('data/phones.csv')
-df_phoneNumbers = df_phoneNumbers[[df_phoneNumbers.columns[1], df_phoneNumbers.columns[0], df_phoneNumbers.columns[2]]]
 phonesDictionary = {}
 for i in range(len(df_phoneNumbers)):
-    phone_tmp = PhoneNumberNode(df_phoneNumbers.iloc[i][0], df_phoneNumbers.iloc[i][1], df_phoneNumbers.iloc[i][2])
-    phonesDictionary[df_phoneNumbers.iloc[i][0]] = phone_tmp
+    phone_tmp = PhoneNumberNode(df_phoneNumbers.iloc[i][1], df_phoneNumbers.iloc[i][0], df_phoneNumbers.iloc[i][2])
+    phonesDictionary[df_phoneNumbers.iloc[i][1]] = phone_tmp
 
 
 
