@@ -48,6 +48,3 @@ phonesDictionary = {}
 for i in range(len(df_phoneNumbers)):
     phone_tmp = PhoneNumberNode(df_phoneNumbers.iloc[i][1], df_phoneNumbers.iloc[i][0], df_phoneNumbers.iloc[i][2])
     phonesDictionary[df_phoneNumbers.iloc[i][1]] = phone_tmp
-
-
-
