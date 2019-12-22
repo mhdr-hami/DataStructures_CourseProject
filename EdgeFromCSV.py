@@ -32,3 +32,10 @@ for i in range(len(df_transactions)):
 
 ########################################################################################################################
 
+#Relations
+df_relations = pd.read_csv('data/relationships.csv')
+relationsDictionary = {}
+for i in range(len(df_relations)):
+    x = str(df_relations.iloc[i][0]) + str(df_relations.iloc[i][1])
+    relation_tmp = RelationEdge(x, df_relations.iloc[i][0], df_relations.iloc[i][1], df_relations.iloc[i][2], df_relations.iloc[i][3])
+    relationsDictionary[x] = relation_tmp

@@ -2,9 +2,9 @@ from Edge import *
 
 
 class RelationEdge(Edge):
-    def __init__(self, FromNode, ToNode, Relation, Beginning):
+    def __init__(self, uniqueKey, FromNode, ToNode, Relation, Beginning):
         self.FromNode = FromNode
         self.ToNode = ToNode
-        self.UniqueKey = 0
+        self.UniqueKey = uniqueKey
         self.Relation = Relation
         self.Beginning = Beginning
