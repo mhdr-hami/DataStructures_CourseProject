@@ -35,12 +35,10 @@ for i in range(len(df_bankAccounts)):
 
 # Persons
 df_persons = pd.read_csv('data/people.csv')
-df_persons = df_persons[[df_persons.columns[2], df_persons.columns[1], df_persons.columns[0], df_persons.columns[3], df_persons.columns[4], df_persons.columns[5], df_persons.columns[6]]]
 personDictionary = {}
-print(df_persons)
 for i in range(len(df_persons)):
-    person_tmp = PersonNode(df_persons.iloc[i][0], df_persons.iloc[i][1], df_persons.iloc[i][2], df_persons.iloc[i][3], df_persons.iloc[i][4], df_persons.iloc[i][5])
-    personDictionary[df_persons.iloc[i][0]] = person_tmp
+    person_tmp = PersonNode(df_persons.iloc[i][2], df_persons.iloc[i][1], df_persons.iloc[i][0], df_persons.iloc[i][3], df_persons.iloc[i][4], df_persons.iloc[i][5], df_persons.iloc[i][6])
+    personDictionary[df_persons.iloc[i][2]] = person_tmp
 
 ########################################################################################################################
 
