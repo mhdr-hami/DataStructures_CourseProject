@@ -39,7 +39,9 @@ for _ in range(PEOPLE_COUNT):
     birth = f.date()
     city = f.city()
     work = f.company()
+    # work = random.choice(['گمرک', 'معلم', 'سوپری', 'دانشجو', 'طلافروش'])
     address1 = f.address()
+    address1 = address1.replace('\n', " ")
     people.append((first_name, surname, ssn, birth, city, work, address1))
     for __ in range(random.randint(0, MAX_BANK_ACCOUNTS_PER_PERSON)):
         bank_name = random.choice(['ملی', 'ملت', 'تجارت', 'صادرات', 'سرمایه'])
