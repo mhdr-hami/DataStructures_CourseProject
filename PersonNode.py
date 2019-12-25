@@ -3,6 +3,7 @@ from Node import *
 
 class PersonNode (Node):
     def __init__(self, idNumber, name, familyName, birthDay, birthPlace, job, jobPlace):
+        Node.__init__(self, idNumber)
         self.unique_Key = idNumber
         self.name = name
         self.familyName = familyName
