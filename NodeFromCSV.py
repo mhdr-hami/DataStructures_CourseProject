@@ -20,7 +20,7 @@ df_houses = pd.read_csv('data/homes.csv')
 houseDictionary = {}
 for i in range(len(df_houses)):
     house_tmp = HouseNode(df_houses.iloc[i][2], df_houses.iloc[i][1], df_houses.iloc[i][0], df_houses.iloc[i][3], df_houses.iloc[i][4])
-    houseDictionary[df_houses.iloc[i][2]] = house_tmp
+    houseDictionary[str(df_houses.iloc[i][2])] = house_tmp
 
 ########################################################################################################################
 
@@ -38,7 +38,7 @@ df_persons = pd.read_csv('data/people.csv')
 personDictionary = {}
 for i in range(len(df_persons)):
     person_tmp = PersonNode(df_persons.iloc[i][2], df_persons.iloc[i][1], df_persons.iloc[i][0], df_persons.iloc[i][3], df_persons.iloc[i][4], df_persons.iloc[i][5], df_persons.iloc[i][6])
-    personDictionary[df_persons.iloc[i][2]] = person_tmp
+    personDictionary[str(df_persons.iloc[i][2])] = person_tmp
 
 ########################################################################################################################
 
@@ -47,4 +47,4 @@ df_phoneNumbers = pd.read_csv('data/phones.csv')
 phonesDictionary = {}
 for i in range(len(df_phoneNumbers)):
     phone_tmp = PhoneNumberNode(df_phoneNumbers.iloc[i][1], df_phoneNumbers.iloc[i][0], df_phoneNumbers.iloc[i][2])
-    phonesDictionary[df_phoneNumbers.iloc[i][1]] = phone_tmp
+    phonesDictionary[str(df_phoneNumbers.iloc[i][1])] = phone_tmp
