@@ -1,5 +1,4 @@
 class Edge:
-    UniqueKey = 0
-    FromNode = 0
-    ToNode = 0
-#
+    uniqueKey = 0
+    fromNode = 0
+    toNode = 0

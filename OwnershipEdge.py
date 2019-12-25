@@ -2,9 +2,9 @@ from Edge import *
 
 
 class OwnershipEdge(Edge):
-    def __init__(self, SAID, FromNode, ToNode, BuyDate, Price):
-        self.FromNode = FromNode
-        self.ToNode = ToNode
-        self.UniqueKey = SAID
-        self.BuyDate = BuyDate
-        self.Price = Price
+    def __init__(self, SAID, fromNode, toNode, buyDate, price):
+        self.fromNode = fromNode
+        self.toNode = toNode
+        self.uniqueKey = SAID
+        self.buyDate = buyDate
+        self.price = price
