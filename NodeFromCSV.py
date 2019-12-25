@@ -27,9 +27,11 @@ for i in range(len(df_houses)):
 # BankAccount
 df_bankAccounts = pd.read_csv('data/accounts.csv')
 bankDictionary = {}
+bankAccDictionary = {}
 for i in range(len(df_bankAccounts)):
-    bank_tmp = BankAccount(df_bankAccounts.iloc[i][2], df_bankAccounts.iloc[i][1], df_bankAccounts.iloc[i][0], df_bankAccounts.iloc[i][3])
+    bank_tmp = BankAccount(df_bankAccounts.iloc[i][2], df_bankAccounts.iloc[i][0], df_bankAccounts.iloc[i][1], df_bankAccounts.iloc[i][3])
     bankDictionary[df_bankAccounts.iloc[i][2]] = bank_tmp
+    bankAccDictionary[str(df_bankAccounts.iloc[i][3])] = bank_tmp
 
 ########################################################################################################################
 
