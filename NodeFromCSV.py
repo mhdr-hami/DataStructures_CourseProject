@@ -4,6 +4,7 @@ from CarNode import *
 from PhoneNumberNode import *
 from HouseNode import *
 from BankAccount import *
+import random
 ########################################################################################################################
 
 # CARS
@@ -41,6 +42,26 @@ personDictionary = {}
 for i in range(len(df_persons)):
     person_tmp = PersonNode(df_persons.iloc[i][2], df_persons.iloc[i][1], df_persons.iloc[i][0], df_persons.iloc[i][3], df_persons.iloc[i][4], df_persons.iloc[i][5], df_persons.iloc[i][6])
     personDictionary[str(df_persons.iloc[i][2])] = person_tmp
+x_randomNum = random.randint(10, 15)
+for i in range(len(df_persons)//x_randomNum):
+    randomKey = random.choice(list(personDictionary.keys()))
+    personDictionary[randomKey].job = "گمرک"
+x_randomNum = random.randint(10, 15)
+for i in range(len(df_persons) // x_randomNum):
+    randomKey = random.choice(list(personDictionary.keys()))
+    personDictionary[randomKey].job = "سازمان بنادر"
+x_randomNum = random.randint(10, 15)
+for i in range(len(df_persons) // x_randomNum):
+    randomKey = random.choice(list(personDictionary.keys()))
+    personDictionary[randomKey].job = "بانک ملی ایران"
+x_randomNum = random.randint(10, 15)
+for i in range(len(df_persons) // x_randomNum):
+    randomKey = random.choice(list(personDictionary.keys()))
+    personDictionary[randomKey].job = "وزارت نفت"
+x_randomNum = random.randint(10, 15)
+for i in range(len(df_persons) // x_randomNum):
+    randomKey = random.choice(list(personDictionary.keys()))
+    personDictionary[randomKey].job = "پلیس"
 
 ########################################################################################################################
 
