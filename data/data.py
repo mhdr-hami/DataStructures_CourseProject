@@ -39,7 +39,6 @@ for _ in range(PEOPLE_COUNT):
     birth = f.date()
     city = f.city()
     work = f.company()
-    # work = random.choice(['گمرک', 'معلم', 'سوپری', 'دانشجو', 'طلافروش'])
     address1 = f.address()
     address1 = address1.replace('\n', " ")
     people.append((first_name, surname, ssn, birth, city, work, address1))
