@@ -59,3 +59,25 @@ for key in relationsDictionary:
 
 ########################################################################################################################
 
+#faze2
+for key in personDictionary:
+    if personDictionary[key].job == "گمرک":
+        checkingNode = []
+        maznoon = []
+        for item in personDictionary[key].outgoing:
+            if item[1] == "relation":
+                checkingNode.append(relationsDictionary[str(item[0])].toNode)
+                maznoon.append(relationsDictionary[str(item[0])].toNode)
+        maxDist = 1
+        while maxDist <= 5:
+            nodeForCheck = checkingNode[0]
+            checkingNode.pop()
+            for item in nodeForCheck.outgoing:
+                if item[1] == "relation" and !(item[0] in maznoon):
+                    checkingNode.append(relationsDictionary[str(item[0])].toNode)
+                    maznoon.append(relationsDictionary[str(item[0])].toNode)
+                    maxDist += 1
+    for item in maznoon:
+        for key2 in ownerShipsDictionary:
+            if ownerShipsDictionary[key].fromNode == item.idNumber and ownerShipsDictionary[key].buyDate<"2 sal":
+                print(personDictionary[key])
