@@ -28,6 +28,7 @@ for key in personDictionary:
                 x = list(str(ownerShipsDictionary[key2[0]].buyDate).split("-"))
                 # if ownerShipsDictionary[key2[0]].fromNode == personDictionary[str(sPerson)].unique_Key and 2020 * 365 - int(x[0]) * 365 + int(x[1]) * 30 + int(x[2]) < 365 * 2:
                 if 2020 * 365 - int(x[0]) * 365 + int(x[1]) * 30 + int(x[2]) < 365 * 2:
-                    fazeTwoSuspected.append(key)
+                    if key not in fazeTwoSuspected:
+                        fazeTwoSuspected.append(key)
                     # print(personDictionary[key].unique_Key, personDictionary[key].job, ownerShipsDictionary[key2[0]].buyDate, ownerShipsDictionary[key2[0]].fromNode)
 ########################################################################################################################
