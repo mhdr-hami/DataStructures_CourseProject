@@ -30,3 +30,4 @@ for key in personDictionary:
                 if 2020 * 365 - int(x[0]) * 365 + int(x[1]) * 30 + int(x[2]) < 365 * 2:
                     fazeTwoSuspected.append(key)
                     # print(personDictionary[key].unique_Key, personDictionary[key].job, ownerShipsDictionary[key2[0]].buyDate, ownerShipsDictionary[key2[0]].fromNode)
+########################################################################################################################
