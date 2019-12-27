@@ -61,6 +61,9 @@ for key in relationsDictionary:
 
 #faze2
 for key in personDictionary:
+    if personDictionary[key].job == "گمرک":
+        print(personDictionary[key].unique_Key)
+for key in personDictionary:
     suspected = {}
     if personDictionary[key].job == "گمرک":
         checkingNodes = []
@@ -69,17 +72,18 @@ for key in personDictionary:
                 checkingNodes.append(relationsDictionary[str(item[0])].toNode)
                 suspected[relationsDictionary[str(item[0])].toNode] = 1
         maxDist = 1
-        while maxDist <= 5 or len(checkingNodes) != 0:
+        while maxDist <= 5 and len(checkingNodes) != 0:
             topNodeKey = checkingNodes[0]
             topNode = personDictionary[str(topNodeKey)]
             checkingNodes.pop()
             for item in topNode.outgoing:
-                if item[1] == "relation" and item[0] not in suspected:
+                if item[1] == "relation" and not relationsDictionary[str(item[0])].fromNode in suspected:
                     checkingNodes.append(relationsDictionary[str(item[0])].toNode)
                     suspected[relationsDictionary[str(item[0])].toNode] = suspected[topNodeKey] + 1
                     maxDist = suspected[topNodeKey] + 1
     for sPerson in suspected:
-        for key2 in ownerShipsDictionary:
-            x = list(str(ownerShipsDictionary[key].buyDate).split("-"))
-            if ownerShipsDictionary[key2].fromNode == sPerson.idNumber and 2020 * 365 - int(x[0]) * 365 + int(x[1]) * 30 + int(x[2]) < 365 * 2:
-                print(personDictionary[key])
+        for key2 in personDictionary[str(sPerson)].outgoing:
+            if key2[1] == "ownerShip":
+                x = list(str(ownerShipsDictionary[key2[0]].buyDate).split("-"))
+                if ownerShipsDictionary[key2[0]].fromNode == personDictionary[str(sPerson)].unique_Key and 2020 * 365 - int(x[0]) * 365 + int(x[1]) * 30 + int(x[2]) < 365 * 2:
+                    print(personDictionary[key].unique_Key, personDictionary[key].job, ownerShipsDictionary[key2[0]].buyDate, ownerShipsDictionary[key2[0]].fromNode)
