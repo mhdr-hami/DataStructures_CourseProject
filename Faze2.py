@@ -18,7 +18,7 @@ for key in personDictionary:
             topNode = personDictionary[str(topNodeKey)]
             checkingNodes.pop()
             for item in topNode.outgoing:
-                if item[1] == "relation" and not relationsDictionary[str(item[0])].fromNode in suspected:
+                if item[1] == "relation" and relationsDictionary[str(item[0])].fromNode not in suspected:
                     checkingNodes.append(relationsDictionary[str(item[0])].toNode)
                     suspected[relationsDictionary[str(item[0])].toNode] = suspected[topNodeKey] + 1
                     maxDist = suspected[topNodeKey] + 1
