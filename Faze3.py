@@ -6,20 +6,19 @@ fazeThreeSuspected = []
 for sPerson in fazeTwoSuspected:
     visited = {}
     checkingNodes = []
-    for item in personDictionary[sPerson].outgoing:
+    for item in personDictionary[sPerson].incomming:
         if item[1] == "transaction":
-            checkingNodes.append(transactionsDictionary[str(item[0])].toNode)
-            visited[transactionsDictionary[str(item[0])].toNode] = [1, transactionsDictionary[str(item[0])].date, transactionsDictionary[str(item[0])].amount, transactionsDictionary[str(item[0])].uniqueKey]
-            # translate toNode to idNumber from accountNumber
-            if personDictionary[str(transactionsDictionary[str(item[0])].toNode)].job == "قاچاقچی":
+            checkingNodes.append(bankAccDictionary[transactionsDictionary[str(item[0])].fromNode].idNumber)
+            visited[bankAccDictionary[transactionsDictionary[str(item[0])].fromNode].idNumber] = [1, transactionsDictionary[str(item[0])].date, transactionsDictionary[str(item[0])].amount, transactionsDictionary[str(item[0])].uniqueKey]
+            if personDictionary[str(bankAccDictionary[transactionsDictionary[str(item[0])].fromNode].idNumber)].job == "قاچاقچی":
                 fazeThreeSuspected.append(sPerson)
     maxDist = 1
     while maxDist <= 5 and len(checkingNodes) != 0:
         topNodeKey = checkingNodes[0]
         topNode = personDictionary[topNodeKey]
         checkingNodes.pop()
-        for item in topNode.outgoing:
-            if item[1] == "transaction" and transactionsDictionary[str(item[0])].fromNode not in visited:
+        for item in topNode.incomming:
+            if item[1] == "transaction" and bankAccDictionary[transactionsDictionary[str(item[0])].fromNode].idNumber not in visited:
                 x = list(str(transactionsDictionary[str(item[0])].date).split("-"))
                 intx = 365 * int(x[0]) + 30 * int(x[1]) + int(x[2])
                 x2 = list(str(visited[topNodeKey][1]).split("-"))
