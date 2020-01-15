@@ -3,13 +3,16 @@ from flask import render_template, request, redirect, url_for
 # from werkzeug import secure_filename
 from flask import Flask
 from flask import request
+import random
 
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 
 @app.route('/')
 def index():
-    return render_template("FileReader.html")
+    temp = "?q=" + str(random.randint(0, 100000))
+    return render_template("FileReader.html", temp=temp)
 
 
 @app.route('/Loading', methods=['GET', 'POST'])

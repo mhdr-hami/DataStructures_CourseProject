@@ -1,3 +1,8 @@
+function loadingstart()
+{
+document.body.innerHTML += '<div class = "container"><div class="sk-chase"><div class="sk-chase-dot"></div><div class="sk-chase-dot"></div><div class="sk-chase-dot"></div><div class="sk-chase-dot"></div><div class="sk-chase-dot"></div><div class="sk-chase-dot"></div></div><div class = "loadingText">Loading...</div></div>';
+
+}
 function fix_dpi(canvasId) {
     //get DPI
     let dpi = window.devicePixelRatio;
@@ -131,6 +136,11 @@ $(document).ready(function () {
         clearInterval(time0);
         fadeOut();
     }, 4500);
-    
-    
+
+  $("#container").hide();
+  $("#form1").on("submit", function(){
+    $("#t1").hide();
+    $("#container").fadeIn();
+
+  });//submit
 });

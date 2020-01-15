@@ -1,15 +1,30 @@
 <html>
 <head>
-    <link rel="stylesheet" href= "/static/style2.css">
-    <script src="/static/jquery-3.3.1.min.js"></script>
-    <script src="/static/cursor.js"></script>
-    <script src="/static/loading.js"></script>
+    <link rel="stylesheet" href= /static/style2.css{{temp}}>
+    <script src="/static/jquery-3.3.1.min.js{{temp}}"></script>
+    <script src="/static/cursor.js{{temp}}"></script>
+    <script src="/static/loading.js{{temp}}"></script>
     <meta charset="UTF-8">
     <title>The Matrix</title>
 </head>
 <body>
     <center>
-        <table class="t1">
+        <div id="container" class = "container">
+            <div class="sk-chase">
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <br>
+            </div>
+            <div class="loadingText">
+                Loading...
+            </div>
+
+        </div>
+        <table id = "t1" class="t1">
             <tr >
                 <td class = "td1" colspan="2">
                     <div class = "div1loading">
@@ -24,19 +39,21 @@
                     </p>
                 </td>
                 <td class="td2">
-                    <form action="http://127.1.1.0:8000/Loading" method="post" class = "f1" enctype=multipart/form-data>
+                    <form id = "form1" action="http://127.1.1.0:8000/Loading" method="post" class = "f1" enctype=multipart/form-data>
                             <input class="input-file" name=TheDataset id="TheDataset" type="file" multiple="multiple">
                             <label tabindex="0" for="TheDataset" class="csvfileclass">
                                 <p class="p1">
                                 Choose
                                 </p>
-                            </label>  
-                            <input type="submit" class="submit1">
+                            </label>
+                        <input id = "submit1" type="submit" class="submit1" value="Submit">
+                        <!--<input id = "submitOrg" type="submit" style="visibility:hidden;">-->
                     </form>
+
                 </td>
             </tr>
-            
         </table>
+
     </center>
 </body>
 </html>

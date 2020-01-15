@@ -14,6 +14,7 @@ $(document).ready(function () {
             });
         }
     }, 460);
+    cursorReady();
     $(document).keydown(function (e) {
         if (e.keyCode == 13) {
             var command = document.getElementById("s1").innerHTML;
@@ -30,5 +31,5 @@ $(document).ready(function () {
         }
       });
 
-cursorReady();
+
 });
