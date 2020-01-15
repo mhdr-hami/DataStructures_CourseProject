@@ -14,20 +14,20 @@ RELATIONSHIPS_COUNT = 1000
 people = []
 ssns = random.sample(range(10 ** 10, 10 ** 11), PEOPLE_COUNT)
 accounts = []
-account_ids = random.sample(range(10 ** 5, 10 ** 6), PEOPLE_COUNT * MAX_BANK_ACCOUNTS_PER_PERSON)
+account_ids = random.sample(range(10 ** 6, 10 ** 7), PEOPLE_COUNT * MAX_BANK_ACCOUNTS_PER_PERSON)
 IBANs = set()
 homes = []
 postal_codes = random.sample(range(10 ** 9, 10 ** 10), PEOPLE_COUNT * MAX_HOMES_PER_PERSON)
 cars = []
-plates = random.sample(range(10 ** 4, 10 ** 5), PEOPLE_COUNT * MAX_CARS_PER_PERSON)
+plates = random.sample(range(10 ** 6, 10 ** 7), PEOPLE_COUNT * MAX_CARS_PER_PERSON)
 phones = []
 numbers = random.sample(range(10 ** 8, 10 ** 9), PEOPLE_COUNT * MAX_PHONES_PER_PERSON)
 ownerships = []
-own_ids = random.sample(range(10 ** 5, 10 ** 6), PEOPLE_COUNT * (MAX_CARS_PER_PERSON + MAX_HOMES_PER_PERSON))
+own_ids = random.sample(range(10 ** 6, 10 ** 7), PEOPLE_COUNT * (MAX_CARS_PER_PERSON + MAX_HOMES_PER_PERSON))
 transactions = []
-transaction_ids = random.sample(range(10 ** 5, 10 ** 6), TRANSACTION_COUNT)
+transaction_ids = random.sample(range(10 ** 6, 10 ** 7), TRANSACTION_COUNT)
 calls = []
-call_ids = random.sample(range(10 ** 5, 10 ** 6), CALL_COUNT)
+call_ids = random.sample(range(10 ** 6, 10 ** 7), CALL_COUNT)
 relationships = []
 
 f = faker.Faker(locale='fa-IR')
