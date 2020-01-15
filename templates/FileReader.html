@@ -1,9 +1,9 @@
 <html>
 <head>
-    <link rel="stylesheet" href="style2.css">
-    <script src="jquery-3.3.1.min.js"></script>
-    <script src="cursor.js"></script>
-    <script src="loading.js"></script>
+    <link rel="stylesheet" href= "/static/style2.css">
+    <script src="/static/jquery-3.3.1.min.js"></script>
+    <script src="/static/cursor.js"></script>
+    <script src="/static/loading.js"></script>
     <meta charset="UTF-8">
     <title>The Matrix</title>
 </head>
@@ -24,9 +24,9 @@
                     </p>
                 </td>
                 <td class="td2">
-                    <form action="index.html" method="post" class = "f1">
-                            <input class="input-file" id="my-file" type="file" multiple>
-                            <label tabindex="0" for="my-file" class="csvfileclass">
+                    <form action="http://0.0.0.0:8000/Loading" method="post" class = "f1" enctype=multipart/form-data>
+                            <input class="input-file" name=TheDataset id="TheDataset" type="file" multiple="multiple">
+                            <label tabindex="0" for="TheDataset" class="csvfileclass">
                                 <p class="p1">
                                 Choose
                                 </p>
