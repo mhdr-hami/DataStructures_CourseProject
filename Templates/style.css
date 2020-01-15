@@ -1,0 +1,117 @@
+body
+{
+    background-color: black;
+    color: white;
+    visibility: hidden;
+}
+div.whole
+{
+    width: 100%;
+
+}
+input.text1
+{
+    background-color: #263238;
+    border: none;
+    width: 100%;
+    height: 30px;
+    font-family: "LCD Solid";
+    color: white;
+    font-size: 18px;
+    width:0px;
+    height: 0px;
+    /* visibility: hidden; */
+}
+input.text1:enabled
+{
+ outline: none;
+}
+div.input
+{
+  color: white;
+    font-family: "LCD Solid";
+    border-right:1px solid white;
+    height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  left: 0;
+    display: block;
+    background-color: black;
+    width: 50%;
+    padding: 5px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+div.output
+{
+    font-size: 18px;
+    font-family: "LCD Solid";
+    color: #28fd25;
+    border-left:1px solid white;
+    
+  line-height: 20px;
+    height: 100%;
+  width: 50%;
+  position: fixed;
+  
+  z-index: 1;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  padding: 5px;
+  padding-left: 10px;
+  padding-top: 10px;
+  display: block;
+    background-color: black;
+    width: 50%;
+}
+p.p1
+{
+    color: red;
+    padding: 0px;
+    margin: 6px;
+}
+p.log
+{
+  font-size: 18px;
+  line-height: 26px;
+  display: none;
+  margin: 0px;
+}
+canvas.c1
+{
+    position: fixed;
+    z-index: 19;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+#cmd {
+    background-color: #263238;
+    border: none;
+    width: 100%;
+    height: 30px;
+    font-family: "LCD Solid";
+    color: white;
+    font-size: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    cursor : text;
+  }
+  #cmd span {
+    float: left;
+    padding-left: 3px;
+    white-space: pre;
+  }
+  #cursor {
+    float: left;
+    width: 9px;
+    height: 20px;
+    background: white;
+  }
+  
