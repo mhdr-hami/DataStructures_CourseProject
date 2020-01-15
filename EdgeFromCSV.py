@@ -4,7 +4,7 @@ from RelationEdge import *
 from CallEdge import *
 from NodeFromCSV import *
 import runpy
-runpy.run_path('NodeFromCSV.py')
+# runpy.run_path('NodeFromCSV.py')
 ########################################################################################################################
 
 #Ownerships
