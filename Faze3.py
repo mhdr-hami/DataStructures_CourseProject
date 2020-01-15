@@ -43,14 +43,14 @@ for sPerson in fazeTwoSuspected:
                                 fazeThreeSuspected.append(sPerson)
                         maxDist = visited[topNodeKey][0] + 1
         # print(len(visited))
-i = 0
-for person in personDictionary:
-    if personDictionary[person].job == "قاچاقچی":
-        i += 1
-print(i)
-print(len(personDictionary))
-print(len(fazeTwoSuspected))
-print(len(fazeThreeSuspected))
-for item in fazeThreeSuspected:
-    print(personDictionary[item].unique_Key)
+# i = 0
+# for person in personDictionary:
+#     if personDictionary[person].job == "قاچاقچی":
+#         i += 1
+# print(i)
+# print(len(personDictionary))
+# print(len(fazeTwoSuspected))
+# print(len(fazeThreeSuspected))
+# for item in fazeThreeSuspected:
+#     print(personDictionary[item].unique_Key)
 
