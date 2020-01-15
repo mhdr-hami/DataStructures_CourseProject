@@ -10,9 +10,9 @@ import random
 # CARS
 df_cars = pd.read_csv('data/cars.csv')
 carsDictionary = {}
-for i in df_cars:
-    car_tmp = CarNode(i[0], i[1], i[2], i[3])
-    carsDictionary[i[0]] = car_tmp
+for i in range(len(df_cars)):
+    car_tmp = CarNode(df_cars.iloc[i][0], df_cars.iloc[i][1], df_cars.iloc[i][2], df_cars.iloc[i][3])
+    carsDictionary[df_cars.iloc[i][0]] = car_tmp
 
 ########################################################################################################################
 
