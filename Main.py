@@ -39,7 +39,7 @@ def upload():
         import Faze4
         print("f2:", Faze4.fazeTwoSuspected)
         print("f3:", Faze4.fazeThreeSuspected)
-        print("f4:",Faze4.fazeFourSuspected)
+        print("f4:", Faze4.fazeFourSuspected)
         return render_template('index.html')
 
     return render_template('FileReader.html')
