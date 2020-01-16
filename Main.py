@@ -31,8 +31,8 @@ def upload():
         # save each "charts" file
         for file in request.files.getlist('TheDataset'):
             # file.save(os.path.join(uploads_dir, file.name))
-            print(os.path.join(uploads_dir, (file.filename)))
-            file.save(os.path.join(uploads_dir, (file.filename)))
+            print(os.path.join(uploads_dir, file.filename))
+            file.save(os.path.join(uploads_dir, file.filename))
 
         # return redirect(url_for('upload'))
 
