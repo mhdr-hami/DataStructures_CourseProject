@@ -40,7 +40,9 @@ def upload():
         print("f2:", Faze4.fazeTwoSuspected)
         print("f3:", Faze4.fazeThreeSuspected)
         print("f4:", Faze4.fazeFourSuspected)
-        return render_template('index.html')
+        rand = "?q=" + str(random.randint(0, 100000))
+        return render_template('index.html', rand=rand, f1=Faze4.personDictionary, f2=Faze4.fazeTwoSuspected,
+                               f3=Faze4.fazeThreeSuspected, f4=Faze4.fazeFourSuspected)
 
     return render_template('FileReader.html')
 

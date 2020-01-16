@@ -28,8 +28,7 @@ $(document).ready(function () {
                 document.getElementById("logInput").innerHTML = document.getElementById("logInput").innerHTML + "<br>" + command;
                 n = parseInt(n) + 1;
             }
+            printFaz(whatTheFaz($("#s1").text()));
         }
       });
-
-
 });

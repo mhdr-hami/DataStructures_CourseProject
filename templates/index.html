@@ -1,32 +1,132 @@
 <html>
 <head>
-    <link rel="stylesheet" href="/static/style.css">
-    <script src="/static/jquery-3.3.1.min.js"></script>
-    <script src="/static/cursor.js"></script>
-    <script src="/static/load.js"></script>
-    <!-- <script src="FileReaderLoad.js"></script> -->
+    <script>
+        let f2size = {{f2|length}};
+        let f3size = {{f3|length}};
+        let f4size = {{f4|length}};
+        let arr2 = new Array(f2size);
+        let arr3 = new Array(f2size);
+        let arr4 = new Array(f2size);
+    </script>
+    <link rel="stylesheet" href="/static/style.css{{rand}}">
+    <script src="/static/jquery-3.3.1.min.js{{rand}}"></script>
+    <script src="/static/cursor.js{{rand}}"></script>
+    <script src="/static/load.js{{rand}}"></script>
+    <script src="/static/MatrixAgent.js{{rand}}"></script>
     <meta charset="UTF-8">
     <title>The Matrix</title>
+    <script>
+        function clearLeft(){
+            document.getElementById("logInput").innerHTML = "";
+        }
+        function clearRight(){
+            document.getElementById("p1").innerHTML = "";
+        }
+        function clearBoth(){
+            clearLeft();
+            clearRight();
+        }
+        function print(text)
+        {
+            document.getElementById("p1").innerHTML += text;
+        }
+        function println(text)
+        {
+            document.getElementById("p1").innerHTML += text + "<br>";
+        }
+        function load() {
+            f2size = {{f2|length}};
+            f3size = {{f3|length}};
+            f4size = {{f4|length}};
+            arr2 = new Array(f2size);
+            arr3 = new Array(f2size);
+            arr4 = new Array(f2size);
+            console.log(f2size);
+            console.log(f3size);
+            console.log(f4size);
+
+            let j = 0;
+            {%for i in f2 %}
+            arr2[j] = {{i}};
+            j++;
+            {%endfor%}
+            j = 0;
+            {%for i in f3 %}
+            arr3[j] = {{i}};
+            j++;
+            {%endfor%}
+            j = 0;
+            {%for i in f4 %}
+            arr4[j] = {{i}};
+            j++;
+            {%endfor%}
+
+            console.log(arr2);
+            console.log(arr3);
+            console.log(arr4);
+        }
+
+        function printFaz(x) {
+            if(x == 1)
+            {
+                println("You Can't Access Them Now!")
+            }
+            if (x == 2) {
+                println("Phase Two Suspected People:");
+                for (let i = 0; i < f2size; i++) {
+                    println(arr2[i]);
+                }
+            }
+            if (x == 3) {
+                println("Phase Three Suspected People:");
+                for (let i = 0; i < f3size; i++) {
+                    println(arr3[i]);
+                }
+            }
+            if (x == 4) {
+                println("Phase Four Suspected People:");
+                for (let i = 0; i < f4size; i++) {
+                    println(arr4[i]);
+                }
+            }
+            if(x == -1)
+            {
+                //clearLeft
+                clearLeft();
+            }
+            if(x == -2)
+            {
+                //clearRight
+                clearRight();
+            }
+            if(x == -3)
+            {
+                //clearBothSides
+                clearBoth();
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="whole">
-            <div id = "divInput" class="input">
-                <p id = "logInput" class="log">
-                    
-                </p>
-                <div id="cmd">
-                    <span id = "s1"></span>
-                    <div id="cursor"></div>
-                  </div>
-                <input id = "command" type="text" class="text1">
-            </div>
-            <div class="output">
-                Hello I'm Matrix!
-                <p class="p1">
-                    red text
-                </p>
-                
-            </div>
+<body onload="load()">
+<div class="whole">
+    <div id="divInput" class="input">
+        <p id="logInput" class="log">
+
+        </p>
+        <div id="cmd">
+            <span id="s1"></span>
+            <div id="cursor"></div>
+        </div>
+        <input id="command" type="text" class="text1">
     </div>
+    <div class="output">
+        Hello I'm Matrix!
+
+        <p class="p1" id="p1">
+
+        </p>
+
+    </div>
+</div>
 </body>
 </html>
