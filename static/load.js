@@ -28,7 +28,12 @@ $(document).ready(function () {
                 document.getElementById("logInput").innerHTML = document.getElementById("logInput").innerHTML + "<br>" + command;
                 n = parseInt(n) + 1;
             }
-            printFaz(whatTheFaz($("#s1").text()));
+            let faaz = whatTheFaz($("#s1").text());
+            if(faaz == -1 || faaz == -3)
+            {
+                n = 0;
+            }
+            printFaz(faaz);
         }
       });
 });

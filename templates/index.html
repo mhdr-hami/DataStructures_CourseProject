@@ -30,9 +30,18 @@
         {
             document.getElementById("p1").innerHTML += text;
         }
+        function printLink(text, link)
+        {
+            document.getElementById("p1").innerHTML += "<a href ='" + link + "'>" + text + "</a>";
+        }
+
         function println(text)
         {
             document.getElementById("p1").innerHTML += text + "<br>";
+        }
+        function printlnLink(text, link)
+        {
+            document.getElementById("p1").innerHTML += "<a href ='" + link + "'>" + text + "</a>" + "<br>";
         }
         function load() {
             f2size = {{f2|length}};
@@ -120,8 +129,6 @@
         <input id="command" type="text" class="text1">
     </div>
     <div class="output">
-        Hello I'm Matrix!
-
         <p class="p1" id="p1">
 
         </p>
