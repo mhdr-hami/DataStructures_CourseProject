@@ -76,8 +76,8 @@ def show_graph():
             links.append(temp_dic)
     graph["nodes"] = nodes
     graph["links"] = links
-    return render_template("test.html", dic=str(graph))
-
+    rand = "?q=" + str(random.randint(0, 100000))
+    return render_template("test.html", dic=str(graph), rand=rand)
 
 
 app.run(debug=True, port=8000, host='127.1.1.0')
