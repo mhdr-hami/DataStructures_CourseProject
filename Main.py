@@ -3,7 +3,9 @@ from flask import render_template, request, redirect, url_for
 # from werkzeug import secure_filename
 from flask import Flask
 from flask import request
+from flask import jsonify
 import random
+person_Dic = {}
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -38,6 +40,7 @@ def upload():
 
 
         import Faze4
+        import copy
         print("f2:", Faze4.fazeTwoSuspected)
         print("f3:", Faze4.fazeThreeSuspected)
         print("f4:", Faze4.fazeFourSuspected)
@@ -46,6 +49,35 @@ def upload():
                                f3=Faze4.fazeThreeSuspected, f4=Faze4.fazeFourSuspected)
 
     return render_template('FileReader.html')
+
+
+@app.route('/person')
+@app.route('/person/<idNumber>')
+def show_person(idNumber):
+    return "Hello"
+
+
+@app.route('/graph')
+def show_graph():
+    import Faze4
+    graph = {}
+    nodes = []
+    links = []
+    for item in Faze4.list_of_paths:
+        key = item[0]
+        temp_dic = {"name": Faze4.personDictionary[str(key)].name, "label": Faze4.personDictionary[str(key)].familyName,
+                    "id": key, "job": "suspected"}
+        nodes.append(temp_dic)
+        for i in range(1, len(item)):
+            temp_dic = {"name": Faze4.personDictionary[str(item[i])].name, "label": Faze4.personDictionary[str(item[i])].familyName, "id": item[i], "job": Faze4.personDictionary[str(item[i])].job}
+            nodes.append(temp_dic)
+        for i in range(len(item)-1):
+            temp_dic = {"source": item[i+1], "target": item[i], "type": "", "since": 0}
+            links.append(temp_dic)
+    graph["nodes"] = nodes
+    graph["links"] = links
+    return render_template("test.html", dic=str(graph))
+
 
 
 app.run(debug=True, port=8000, host='127.1.1.0')

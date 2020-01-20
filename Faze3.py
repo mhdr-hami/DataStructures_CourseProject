@@ -3,20 +3,25 @@ from Faze2 import *
 
 ########################################################################################################################
 fazeThreeSuspected = []
+list_of_paths = []
 
 # i = 0
 for sPerson in fazeTwoSuspected:
+    flag = 0
     visited = {}
     checkingNodes = []
     for item in personDictionary[sPerson].incomming:
         if item[1] == "transaction":
             theNODE = bankAccDictionary[str(transactionsDictionary[str(item[0])].fromNode)].idNumber
             checkingNodes.append(theNODE)
-            visited[theNODE] = [1, transactionsDictionary[str(item[0])].date, transactionsDictionary[str(item[0])].amount, transactionsDictionary[str(item[0])].uniqueKey]
+            visited[theNODE] = [1, transactionsDictionary[str(item[0])].date, transactionsDictionary[str(item[0])].amount, transactionsDictionary[str(item[0])].uniqueKey, [sPerson, theNODE]]
             if personDictionary[str(theNODE)].job == "قاچاقچی":
-                # print(i)
-                # i += 1
                 fazeThreeSuspected.append(sPerson)
+                list_of_paths.append(visited[theNODE][4])
+                flag = 1
+                break
+    if flag == 1:
+        continue
     maxDist = 1
     while maxDist <= 5 and len(checkingNodes) != 0:
         topNodeKey = checkingNodes[0]
@@ -33,24 +38,19 @@ for sPerson in fazeTwoSuspected:
                     y = int(transactionsDictionary[str(item[0])].amount)
                     y2 = int(visited[topNodeKey][3])
                     if intx < intx2 and y > y2:
-                    # if intx < intx2:
                         checkingNodes.append(theNODE)
-                        visited[theNODE] = [visited[topNodeKey][0]+1, transactionsDictionary[str(item[0])].date, transactionsDictionary[str(item[0])].amount, transactionsDictionary[str(item[0])].uniqueKey]
+                        path = visited[topNodeKey][4]
+                        path.append(theNODE)
+                        visited[theNODE] = [visited[topNodeKey][0]+1, transactionsDictionary[str(item[0])].date, transactionsDictionary[str(item[0])].amount, transactionsDictionary[str(item[0])].uniqueKey, path]
                         if personDictionary[str(theNODE)].job == "قاچاقچی":
-                            # print(i)
-                            # i += 1
                             if sPerson not in fazeThreeSuspected:
                                 fazeThreeSuspected.append(sPerson)
+                                list_of_paths.append(visited[theNODE][4])
+                                flag = 1
+                                break
                         maxDist = visited[topNodeKey][0] + 1
-        # print(len(visited))
-# i = 0
-# for person in personDictionary:
-#     if personDictionary[person].job == "قاچاقچی":
-#         i += 1
-# print(i)
-# print(len(personDictionary))
-# print(len(fazeTwoSuspected))
-# print(len(fazeThreeSuspected))
-# for item in fazeThreeSuspected:
-#     print(personDictionary[item].unique_Key)
+            if flag == 1:
+                break
+        if flag == 1:
+            break
 

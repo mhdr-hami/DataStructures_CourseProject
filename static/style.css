@@ -118,4 +118,10 @@ canvas.c1
     height: 20px;
     background: white;
   }
+  a.personLink
+  {
+      font-size: 18px;
+    font-family: "LCD Solid";
+    color: #28fd25;
+  }
   

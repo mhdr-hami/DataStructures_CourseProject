@@ -13,5 +13,8 @@ for key in fazeThreeSuspected:
 print(len(fazeTwoSuspected))
 print(len(fazeThreeSuspected))
 print(len(fazeFourSuspected))
-for key in fazeFourSuspected:
+for key in fazeThreeSuspected:
     print(personDictionary[key].name, personDictionary[key].familyName, sep=" ")
+for i in list_of_paths:
+    for j in i:
+        print(personDictionary[str(j)].name, personDictionary[str(j)].familyName ,personDictionary[str(j)].job, sep=":")

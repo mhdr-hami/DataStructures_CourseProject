@@ -26,13 +26,17 @@
             clearLeft();
             clearRight();
         }
+        function personLinkMaker(x)
+        {
+            return "http://127.1.1.0:8000/person/" + x;
+        }
         function print(text)
         {
             document.getElementById("p1").innerHTML += text;
         }
         function printLink(text, link)
         {
-            document.getElementById("p1").innerHTML += "<a href ='" + link + "'>" + text + "</a>";
+            document.getElementById("p1").innerHTML += "<a class = 'personLink' target='_blank' href ='" + link + "'>" + text + "</a>";
         }
 
         function println(text)
@@ -41,7 +45,7 @@
         }
         function printlnLink(text, link)
         {
-            document.getElementById("p1").innerHTML += "<a href ='" + link + "'>" + text + "</a>" + "<br>";
+            document.getElementById("p1").innerHTML += "<a class = 'personLink' target='_blank' href ='" + link + "'>" + text + "</a>" + "<br>";
         }
         function load() {
             f2size = {{f2|length}};
@@ -83,19 +87,20 @@
             if (x == 2) {
                 println("Phase Two Suspected People:");
                 for (let i = 0; i < f2size; i++) {
-                    println(arr2[i]);
+
+                    printlnLink(arr2[i], personLinkMaker(arr2[i]));
                 }
             }
             if (x == 3) {
                 println("Phase Three Suspected People:");
                 for (let i = 0; i < f3size; i++) {
-                    println(arr3[i]);
+                    printlnLink(arr3[i], personLinkMaker(arr3[i]));
                 }
             }
             if (x == 4) {
                 println("Phase Four Suspected People:");
                 for (let i = 0; i < f4size; i++) {
-                    println(arr4[i]);
+                    printlnLink(arr4[i], personLinkMaker(arr4[i]));
                 }
             }
             if(x == -1)
