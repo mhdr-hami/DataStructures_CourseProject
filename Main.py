@@ -5,7 +5,6 @@ from flask import Flask
 from flask import request
 from flask import jsonify
 import random
-person_Dic = {}
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
