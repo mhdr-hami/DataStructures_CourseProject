@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="/static/style.css{{rand}}">
     <script src="/static/jquery-3.3.1.min.js{{rand}}"></script>
     <script src="/static/cursor.js{{rand}}"></script>
-    <script src="/static/load.js{{rand}}"></script>
     <script src="/static/MatrixAgent.js{{rand}}"></script>
+    <script src="static/MatrixLoader.js{{rand}}"></script>
     <meta charset="UTF-8">
     <title>The Matrix</title>
     <script>
@@ -49,6 +49,7 @@
             document.getElementById("p1").innerHTML += "<a class = 'personLink' target='_blank' href ='" + link + "'>" + text + "</a>" + "<br>";
         }
         function load() {
+
             f2size = {{f2|length}};
             f3size = {{f3|length}};
             f4size = {{f4|length}};
@@ -124,6 +125,9 @@
     </script>
 </head>
 <body onload="load()">
+<div class="loader" id="divLoader">
+    <p id = "loader" class = "pLoader"></p>
+</div>
 <div class="whole">
     <div id="divInput" class="input">
         <p id="logInput" class="log">
