@@ -2,22 +2,22 @@ function whatTheFaz(text)
 {
     let txt = text.toLowerCase();
     //faz1
-    if (txt.includes("faz") && (txt.includes("1") || txt.includes("one")))
+    if ((txt.includes("faz") || txt.includes("phase")) && (txt.includes("1") || txt.includes("one")))
     {
         return 1;
     }
     //faz2
-    if (txt.includes("faz") && (txt.includes("2") || txt.includes("two")))
+    if ((txt.includes("faz") || txt.includes("phase")) && (txt.includes("2") || txt.includes("two")))
     {
         return 2;
     }
     //faz3
-    if (txt.includes("faz") && (txt.includes("3") || txt.includes("three")))
+    if ((txt.includes("faz") || txt.includes("phase")) && (txt.includes("3") || txt.includes("three")))
     {
         return 3;
     }
     //faz4
-    if (txt.includes("faz") && (txt.includes("4") || txt.includes("four")))
+    if ((txt.includes("faz") || txt.includes("phase")) && (txt.includes("4") || txt.includes("four")))
     {
         return 4;
     }
