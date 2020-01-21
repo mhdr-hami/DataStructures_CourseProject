@@ -75,8 +75,9 @@ div.output
 p.p1
 {
     color:#28fd25;
-    padding: 0px;
+    padding:0px;
     margin: 6px;
+    line-height: 24px;
 }
 p.log
 {
@@ -121,7 +122,12 @@ canvas.c1
   a.personLink
   {
       font-size: 18px;
-    font-family: "LCD Solid";
-    color: #28fd25;
+      font-family: "LCD Solid";
+      color: #28fd25;
+      text-decoration: none;
+  }
+  a.personLink:hover
+  {
+      background-color: green;
   }
   
