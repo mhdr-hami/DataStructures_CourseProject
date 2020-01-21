@@ -31,7 +31,7 @@ function printHelp(x) {
 
 $(document).ready(function () {
     printHelp(helpText);
-    $("#loader").click(function () {
+    $("#divLoader").click(function () {
         $("#divLoader").fadeOut();
         clearInterval(timer);
         $('input').focus();
